@@ -9,7 +9,7 @@
       <!-- Gallery: 2 columns -->
       <TransitionGroup name="item" appear tag="div" class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
         <figure v-for="(f, idx) in features" :key="f.title" class="rounded-2xl overflow-hidden border bg-white cursor-pointer" :style="{ transitionDelay: `${idx * 70}ms` }" @click="openHigh(f.img, f.title)">
-          <img :src="f.img" :alt="f.title" class="w-full h-48 object-cover" />
+          <img :src="f.img" :alt="f.title" class="w-full h-40 object-cover" />
           <figcaption class="p-4 font-medium text-stone-900">{{ f.title }}</figcaption>
         </figure>
       </TransitionGroup>
