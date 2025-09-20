@@ -1,7 +1,7 @@
 <template>
   <nav class="fixed bottom-0 inset-x-0 z-50">
-    <div class="mx-auto w-full">
-      <ul class="flex items-center justify-center gap-4 sm:gap-6 border-t bg-white/80 backdrop-blur px-4 py-3 shadow-sm">
+    <div class="mx-auto w-full ">
+      <ul class="flex items-center justify-center gap-4 sm:gap-6 border-t bg-[#C4A158] backdrop-blur px-4 py-3 shadow-sm h-18">
         <li v-for="link in links" :key="link.to">
           <RouterLink
             :to="link.to"

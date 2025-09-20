@@ -2,7 +2,7 @@
   <section class="relative" :style="bgStyle">
     <div class="mx-auto max-w-7xl px-4 py-12 grid lg:grid-cols-3 gap-8 text-white">
       <!-- Main column -->
-      <div class="lg:col-span-2">
+      <div class="lg:col-span-2 pt-10">
         <Transition name="item" appear>
           <h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Localização</h2>
         </Transition>
