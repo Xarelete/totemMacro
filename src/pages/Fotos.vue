@@ -1,11 +1,9 @@
 <template>
   <section class="mx-auto max-w-6xl px-4 py-12">
     <Transition name="item" appear><h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Fotos</h2></Transition>
-    <Transition name="item" appear>
-      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <img v-for="(img, idx) in imagens" :key="idx" :src="img" alt="Foto do empreendimento" class="rounded-xl border w-full h-56 object-cover" />
-      </div>
-    </Transition>
+    <TransitionGroup name="item" appear tag="div" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <img v-for="(img, idx) in imagens" :key="idx" :src="img" alt="Foto do empreendimento" class="rounded-xl border w-full h-56 object-cover" :style="{ transitionDelay: `${idx * 60}ms` }" />
+    </TransitionGroup>
   </section>
 </template>
 
