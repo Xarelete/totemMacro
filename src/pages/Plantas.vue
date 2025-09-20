@@ -1,26 +1,43 @@
 <template>
-  <section class="mx-auto max-w-6xl px-4 py-12">
-    <Transition name="item" appear><h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Plantas</h2></Transition>
-    <Transition name="item" appear>
-      <p class="mt-3 text-stone-700">Duas tipologias planejadas para conforto e funcionalidade.</p>
-    </Transition>
+  <section class="relative min-h-dvh">
+    <div class="absolute inset-0 -z-10 bg-cover bg-center" :style="{ backgroundImage: `url(${bgCouro})` }"></div>
 
-    <TransitionGroup name="item" appear tag="div" class="mt-6 grid sm:grid-cols-2 gap-6">
-      <figure v-for="(p, idx) in plantas" :key="p.title" class="rounded-2xl overflow-hidden border bg-white" :style="{ transitionDelay: `${idx * 90}ms` }">
-        <img :src="p.img" :alt="p.alt" class="w-full h-auto" />
-        <figcaption class="p-4">
-          <h3 class="font-semibold">{{ p.title }}</h3>
-          <p class="mt-1 text-stone-700 text-sm">{{ p.desc }}</p>
-          <a :href="p.img" target="_blank" class="inline-block mt-3 px-4 py-2 rounded-full border hover:bg-stone-50">Ver em alta</a>
-        </figcaption>
-      </figure>
-    </TransitionGroup>
+    <div class="mx-auto max-w-6xl px-4 py-12 text-white">
+      <Transition name="item" appear>
+        <h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Plantas</h2>
+      </Transition>
+      <Transition name="item" appear>
+        <p class="mt-3 text-white/90">Duas tipologias planejadas para conforto e funcionalidade.</p>
+      </Transition>
+
+      <TransitionGroup name="item" appear tag="div" class="mt-6 grid sm:grid-cols-2 gap-6">
+        <figure v-for="(p, idx) in plantas" :key="p.title" class="rounded-2xl overflow-hidden border bg-white" :style="{ transitionDelay: `${idx * 90}ms` }">
+          <img :src="p.img" :alt="p.alt" class="w-full h-auto" />
+          <figcaption class="p-4 text-stone-900">
+            <h3 class="font-semibold">{{ p.title }}</h3>
+            <p class="mt-1 text-stone-700 text-sm">{{ p.desc }}</p>
+            <a :href="p.img" @click.prevent="openHigh(p.img, p.alt)" class="inline-block mt-3 px-4 py-2 rounded-full border hover:bg-stone-50">Ver em alta</a>
+          </figcaption>
+        </figure>
+      </TransitionGroup>
+    </div>
+
+    <!-- Modal imagem em alta -->
+    <div v-if="showHigh" class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.esc.window="closeHigh" role="dialog" aria-modal="true" aria-label="Imagem em alta" tabindex="-1">
+      <div class="absolute inset-0 bg-black/70" @click="closeHigh"></div>
+      <div class="relative z-10 w-full max-w-5xl">
+        <button @click="closeHigh" class="absolute -top-10 right-0 px-3 py-1.5 rounded-full bg-white text-stone-900 shadow hover:shadow-md">Fechar</button>
+        <img :src="highSrc" :alt="highAlt" class="w-full h-auto rounded-2xl border shadow-lg" />
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup>
 import planta2 from '../../Material Altus/PLANTAS/PLANTA DE 2 DORMITÓRIOS.jpg'
 import planta3 from '../../Material Altus/PLANTAS/PLANTA DE 3 DORMITÓRIOS.jpg'
+import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
+import { ref } from 'vue'
 
 const plantas = [
   {
@@ -36,4 +53,10 @@ const plantas = [
     desc: '1 banheiro • 1 lavabo • cozinha • área de serviço • sala de jantar/estar • varanda gourmet • 2 vagas com hobby box'
   }
 ]
+
+const showHigh = ref(false)
+const highSrc = ref('')
+const highAlt = ref('')
+const openHigh = (src, alt) => { highSrc.value = src; highAlt.value = alt; showHigh.value = true }
+const closeHigh = () => { showHigh.value = false }
 </script>
