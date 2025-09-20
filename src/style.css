@@ -16,3 +16,8 @@ body { background-color: #FDFDFD; }
 .item-enter-from { opacity: 0; transform: translateY(8px); }
 .item-enter-to   { opacity: 1; transform: translateY(0); }
 .item-enter-active { transition: all .6s var(--ease-soft); }
+
+/* Fade transition for modal images */
+.fade-enter-from { opacity: 0; }
+.fade-enter-to   { opacity: 1; }
+.fade-enter-active { transition: opacity .35s var(--ease-soft); }

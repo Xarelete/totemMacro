@@ -27,7 +27,9 @@
       <div class="absolute inset-0 bg-black/70" @click="closeHigh"></div>
       <div class="relative z-10 w-full max-w-5xl">
         <button @click="closeHigh" class="absolute -top-10 right-0 px-3 py-1.5 rounded-full bg-white text-stone-900 shadow hover:shadow-md">Fechar</button>
-        <img :src="highSrc" :alt="highAlt" class="w-full h-auto rounded-2xl border shadow-lg" />
+        <Transition name="fade" appear>
+          <img :src="highSrc" :alt="highAlt" class="w-full h-auto rounded-2xl border shadow-lg" />
+        </Transition>
       </div>
     </div>
   </section>

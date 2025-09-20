@@ -45,7 +45,9 @@
       <div class="relative z-10 w-full max-w-5xl">
         <button @click="closeFicha" class="absolute -top-10 right-0 px-3 py-1.5 rounded-full bg-white text-stone-900 shadow hover:shadow-md">Fechar</button>
         <div id="ficha-tecnica" class="w-full">
-          <img :src="ficha" alt="Ficha Técnica — Altus América" class="w-full rounded-2xl border shadow-lg" />
+          <Transition name="fade" appear>
+            <img :src="ficha" alt="Ficha Técnica — Altus América" class="w-full rounded-2xl border shadow-lg" />
+          </Transition>
         </div>
       </div>
     </div>
