@@ -26,13 +26,6 @@
             </p>
           </Transition>
 
-          <Transition name="item" appear>
-            <div class="mt-6 flex flex-wrap items-center gap-3">
-              <button @click="toggleFullscreen" :aria-pressed="isFullscreen" class="inline-flex items-center gap-2 rounded-full bg-white/90 text-stone-900 px-5 py-2.5 font-medium shadow hover:shadow-md transition">
-                {{ isFullscreen ? 'Sair da tela cheia' : 'Tela cheia' }}
-              </button>
-            </div>
-          </Transition>
         </div>
       </div>
     </div>
@@ -44,28 +37,4 @@
 <script setup>
 import hero from '../../Material Altus/IMAGENS EM ALTA/2 TORRES HORIZONTAL.jpg'
 import logo from '../../Material Altus/IDENTIDADE VISUAL/LOGO.png'
-
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const isFullscreen = ref(!!document.fullscreenElement)
-const onFsChange = () => { isFullscreen.value = !!document.fullscreenElement }
-
-onMounted(() => {
-  document.addEventListener('fullscreenchange', onFsChange)
-})
-onBeforeUnmount(() => {
-  document.removeEventListener('fullscreenchange', onFsChange)
-})
-
-const toggleFullscreen = async () => {
-  try {
-    if (!document.fullscreenElement) {
-      await document.documentElement.requestFullscreen()
-    } else {
-      await document.exitFullscreen?.()
-    }
-  } catch (e) {
-    console.error('Fullscreen error', e)
-  }
-}
 </script>

@@ -3,7 +3,7 @@
     <div class="absolute inset-0 -z-10 bg-cover bg-center" :style="{ backgroundImage: `url(${bgCouro})` }"></div>
 
     <div class="mx-auto max-w-6xl px-4 py-12 text-white">
-      <Transition name="item" appear><h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Fotos</h2></Transition>
+      <Transition name="item" appear><h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Perspectiva Decorado 3 Dormitórios</h2></Transition>
       <TransitionGroup name="item" appear tag="div" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <img v-for="(img, idx) in imagens" :key="idx" :src="img" alt="Foto do empreendimento" class="rounded-xl border w-full h-56 object-cover cursor-zoom-in" :style="{ transitionDelay: `${idx * 60}ms` }" @click="openHigh(img, 'Foto do empreendimento')" />
       </TransitionGroup>
