@@ -1,8 +1,12 @@
 <template>
   <section class="relative">
     <!-- HERO -->
-    <div class="relative h-dvh">
-      <img :src="hero" alt="Fachada Altus América" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="relative h-[93dvh] bg-black">
+      <img
+        :src="hero"
+        alt="Fachada Altus América"
+        class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain"
+      />
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
       <div class="relative z-10 h-[90vh] flex items-end">
