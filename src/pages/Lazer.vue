@@ -2,28 +2,90 @@
   <section class="relative min-h-dvh">
     <div class="absolute inset-0 -z-10 bg-cover bg-center" :style="{ backgroundImage: `url(${bgCouro})` }"></div>
 
-    <div class="mx-auto max-w-6xl px-4 py-12 text-white">
-    <Transition name="item" appear><h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Lazer</h2></Transition>
+    <div class="mx-auto max-w-[1200px] xl:max-w-[1400px] px-4 py-16 lg:py-20 text-white">
+      <Transition name="item" appear>
+        <h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Lazer</h2>
+      </Transition>
 
-    <div class="mt-6 lg:grid lg:grid-cols-3 lg:gap-8">
-      <!-- Gallery: 2 columns -->
-      <TransitionGroup name="item" appear tag="div" class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <figure v-for="(f, idx) in features" :key="f.title" class="rounded-2xl overflow-hidden border bg-white cursor-pointer" :style="{ transitionDelay: `${idx * 70}ms` }" @click="openHigh(f.img, f.title)">
-          <img :src="f.img" :alt="f.title" class="w-full h-40 object-cover" />
-          <figcaption class="p-4 font-medium text-stone-900">{{ f.title }}</figcaption>
-        </figure>
-      </TransitionGroup>
-
-      <!-- Sidebar: Lazer list -->
-      <aside class="mt-8 lg:mt-0">
+      <div class="mt-10 grid gap-12 lg:grid-cols-[2fr_1fr] items-start">
         <Transition name="item" appear>
-          <h3 class="text-xl font-semibold">+ de 2.000 m² de lazer</h3>
+          <div class="flex flex-col gap-6">
+            <div class="relative flex items-center justify-center gap-4 pb-16 sm:pb-0">
+              <button
+                type="button"
+                @click="prevFeature"
+                class="hidden sm:inline-flex items-center justify-center rounded-full bg-white/80 text-stone-900 w-12 h-12 shadow-lg hover:bg-white transition"
+                aria-label="Anterior"
+              >
+                <span aria-hidden="true">&lt;</span>
+              </button>
+
+              <Transition name="item" mode="out-in">
+                <figure
+                  :key="currentFeature.title"
+                  class="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-sm shadow-2xl cursor-pointer"
+                  @click="openHigh(currentFeature.img, currentFeature.title)"
+                >
+                  <img :src="currentFeature.img" :alt="currentFeature.title" class="w-full h-[360px] sm:h-[420px] lg:h-[480px] object-cover" />
+                  <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 text-lg font-medium">
+                    {{ currentFeature.title }}
+                  </figcaption>
+                </figure>
+              </Transition>
+
+              <button
+                type="button"
+                @click="nextFeature"
+                class="hidden sm:inline-flex items-center justify-center rounded-full bg-white/80 text-stone-900 w-12 h-12 shadow-lg hover:bg-white transition"
+                aria-label="Próxima"
+              >
+                <span aria-hidden="true">&gt;</span>
+              </button>
+
+              <!-- Mobile navigation -->
+              <div class="absolute -bottom-14 flex w-full justify-between px-6 sm:hidden">
+                <button
+                  type="button"
+                  @click="prevFeature"
+                  class="inline-flex items-center justify-center rounded-full bg-white/80 text-stone-900 w-12 h-12 shadow-lg hover:bg-white transition"
+                  aria-label="Anterior"
+                >
+                  <span aria-hidden="true">&lt;</span>
+                </button>
+                <button
+                  type="button"
+                  @click="nextFeature"
+                  class="inline-flex items-center justify-center rounded-full bg-white/80 text-stone-900 w-12 h-12 shadow-lg hover:bg-white transition"
+                  aria-label="Próxima"
+                >
+                  <span aria-hidden="true">&gt;</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-2 text-white/70 text-sm">
+              <span>{{ currentIndex + 1 }} / {{ features.length }}</span>
+            </div>
+          </div>
         </Transition>
-        <TransitionGroup name="item" appear tag="ul" class="mt-4 space-y-3 text-white/80">
-          <li v-for="(a, idx) in amenitiesList" :key="a" class="p-4 rounded-xl border border-white/20" :style="{ transitionDelay: `${idx * 50}ms` }">{{ a }}</li>
-        </TransitionGroup>
-      </aside>
-    </div>
+
+        <!-- Sidebar: Lazer list -->
+        <aside>
+          <Transition name="item" appear>
+            <h3 class="text-xl font-semibold">+ de 2.000 m² de lazer</h3>
+          </Transition>
+          <TransitionGroup name="item" appear tag="ul" class="mt-4 space-y-3 text-white/80">
+            <li
+              v-for="(a, idx) in amenitiesList"
+              :key="a"
+              class="p-4 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm shadow-lg"
+              :style="{ transitionDelay: `${idx * 50}ms` }"
+            >
+              {{ a }}
+            </li>
+          </TransitionGroup>
+        </aside>
+      </div>
     </div>
 
     <!-- Modal imagem em alta -->
@@ -47,7 +109,7 @@ import brinquedoteca from '../../Material Altus/IMAGENS EM ALTA/ALTUS-BRINQUEDOT
 import coworking from '../../Material Altus/IMAGENS EM ALTA/ALTUS-COWORKING-ALTA.jpg'
 import yoga from '../../Material Altus/IMAGENS EM ALTA/ALTUS-YOGA-ALTA.jpg'
 import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const features = [
   { img: academia, title: 'Academia Indoor' },
@@ -70,9 +132,29 @@ const amenitiesList = [
   'Praça Interna • Lounge da Piscina',
 ]
 
+const totalFeatures = features.length
+const currentIndex = ref(0)
+const currentFeature = computed(() => {
+  if (!totalFeatures) {
+    return { img: '', title: '' }
+  }
+  const normalized = ((currentIndex.value % totalFeatures) + totalFeatures) % totalFeatures
+  return features[normalized]
+})
+
 const showHigh = ref(false)
 const highSrc = ref('')
 const highAlt = ref('')
 const openHigh = (src, alt) => { highSrc.value = src; highAlt.value = alt; showHigh.value = true }
 const closeHigh = () => { showHigh.value = false }
+
+const nextFeature = () => {
+  if (!totalFeatures) return
+  currentIndex.value = (currentIndex.value + 1) % totalFeatures
+}
+
+const prevFeature = () => {
+  if (!totalFeatures) return
+  currentIndex.value = (currentIndex.value - 1 + totalFeatures) % totalFeatures
+}
 </script>
