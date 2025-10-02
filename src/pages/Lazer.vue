@@ -66,6 +66,14 @@
             <div class="flex items-center justify-center gap-2 text-white/70 text-sm">
               <span>{{ currentIndex + 1 }} / {{ features.length }}</span>
             </div>
+
+            <button
+              type="button"
+              @click="openHigh(plantaLazer, 'Planta completa de lazer')"
+              class="self-start inline-flex items-center gap-2 rounded-full bg-white text-stone-900 px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition animate-pulse"
+            >
+              Veja planta completa
+            </button>
           </div>
         </Transition>
 
@@ -108,6 +116,7 @@ import wine from '../../Material Altus/IMAGENS EM ALTA/ALTUS-WINE-BAR-ALTA.jpg'
 import brinquedoteca from '../../Material Altus/IMAGENS EM ALTA/ALTUS-BRINQUEDOTECA-LADO-A-ALTA.jpg'
 import coworking from '../../Material Altus/IMAGENS EM ALTA/ALTUS-COWORKING-ALTA.jpg'
 import yoga from '../../Material Altus/IMAGENS EM ALTA/ALTUS-YOGA-ALTA.jpg'
+import plantaLazer from '../../Material Altus/LAZER/planta-lazer.jpeg'
 import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
 import { ref, computed } from 'vue'
 
