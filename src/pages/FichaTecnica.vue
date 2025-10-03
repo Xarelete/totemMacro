@@ -1,10 +1,10 @@
 <template>
   <section class="relative min-h-dvh">
     <div class="absolute inset-0 -z-10 bg-cover bg-center" :style="{ backgroundImage: `url(${bgCouro})` }"></div>
-    <div class="absolute inset-y-0 right-0 left-1/2 z-0 bg-no-repeat bg-right bg-contain pointer-events-none" :style="{ backgroundImage: `url(${torreNoturna})` }"></div>
+    <div class="absolute inset-y-0 right-0 left-1/2 z-0 hidden lg:block bg-no-repeat bg-right bg-contain pointer-events-none" :style="{ backgroundImage: `url(${torreNoturna})` }"></div>
 
-    <div class="mx-auto max-w-6xl px-4 py-12 text-white">
-      <div class="lg:grid lg:grid-cols-1 lg:gap-8 min-h-dvh">
+    <div class="relative z-10 mx-auto max-w-[1200px] xl:max-w-[1400px] px-4 py-16 lg:py-20 text-white">
+      <div class="lg:grid lg:grid-cols-1 lg:gap-8">
         <!-- Left column: content -->
         <div>
           <Transition name="item" appear>
@@ -14,15 +14,35 @@
             <img :src="logoCouro" alt="Altus América" class="mt-3 h-10 sm:h-12 w-auto" />
           </Transition>
 
-          <TransitionGroup name="item" appear tag="div" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            <div v-for="(s, idx) in specs" :key="s.title" class="p-4 rounded-xl border border-white/20" :style="{ transitionDelay: `${idx * 70}ms` }">
+          <TransitionGroup
+            name="item"
+            appear
+            tag="div"
+            class="mt-6 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]"
+          >
+            <div
+              v-for="(s, idx) in specs"
+              :key="s.title"
+              class="h-full rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm shadow-lg"
+              :style="{ transitionDelay: `${idx * 70}ms` }"
+            >
               <strong>{{ s.title }}</strong>
               <div class="text-white/80" v-html="s.desc" />
             </div>
           </TransitionGroup>
 
-          <TransitionGroup name="item" appear tag="div" class="mt-8 grid sm:grid-cols-2 gap-4">
-            <div v-for="(d, idx) in difs" :key="d.title" class="p-5 rounded-2xl border border-white/20" :style="{ transitionDelay: `${idx * 120}ms` }">
+          <TransitionGroup
+            name="item"
+            appear
+            tag="div"
+            class="mt-8 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]"
+          >
+            <div
+              v-for="(d, idx) in difs"
+              :key="d.title"
+              class="h-full rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm shadow-lg"
+              :style="{ transitionDelay: `${idx * 120}ms` }"
+            >
               <h3 class="font-semibold">{{ d.title }}</h3>
               <p class="mt-2 text-white/80 text-sm">{{ d.text }}</p>
             </div>
@@ -59,7 +79,7 @@ import ficha from '../../Material Altus/FICHA TÉCNICA/Informações.png'
 import logoCouro from '../../Material Altus/IDENTIDADE VISUAL/LOGO ALTUS FUNDO COURO.png'
 import { ref } from 'vue'
 import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
-import torreNoturna from '../../Material Altus/IMAGENS EM ALTA/TORRE ÚNICA NOTURNA.png'
+import torreNoturna from '../../Material Altus/IMAGENS EM ALTA/TORRE ÚNICA NOTURNA.png'
 const showFicha = ref(false)
 const openFicha = () => { showFicha.value = true }
 const closeFicha = () => { showFicha.value = false }
