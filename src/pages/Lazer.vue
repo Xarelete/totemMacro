@@ -7,9 +7,9 @@
         <h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Lazer</h2>
       </Transition>
 
-      <div class="mt-10 grid gap-12 lg:grid-cols-[2fr_1fr] items-start">
+      <div class="grid gap-12 lg:grid-cols-[2fr_1fr] items-start">
         <Transition name="item" appear>
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-6 mt-10">
             <div class="relative flex items-center justify-center gap-4 pb-16 sm:pb-0">
               <button
                 type="button"
@@ -82,7 +82,7 @@
           <Transition name="item" appear>
             <h3 class="text-xl font-semibold">+ de 2.000 m² de lazer</h3>
           </Transition>
-          <TransitionGroup name="item" appear tag="ul" class="mt-4 space-y-3 text-white/80">
+          <TransitionGroup name="item" appear tag="ul" class="mt-4 space-y-2 text-white/80">
             <li
               v-for="(a, idx) in amenitiesList"
               :key="a"
@@ -110,6 +110,7 @@
 </template>
 
 <script setup>
+import casaDeCampo from '../../Material Altus/IMAGENS EM ALTA/ALTUS-CASA-DE-CAMPO-ALTA.jpg'
 import academia from '../../Material Altus/IMAGENS EM ALTA/ALTUS-ACADEMIA-CENA-1-ALTA.jpg'
 import gourmet from '../../Material Altus/IMAGENS EM ALTA/ALTUS-GOURMET-CENA-1-ALTA.jpg'
 import wine from '../../Material Altus/IMAGENS EM ALTA/ALTUS-WINE-BAR-ALTA.jpg'
@@ -121,6 +122,7 @@ import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VER
 import { ref, computed } from 'vue'
 
 const features = [
+  { img: casaDeCampo, title: 'Casa da Mata' },
   { img: academia, title: 'Academia Indoor' },
   { img: gourmet, title: 'Salão Gourmet' },
   { img: wine, title: 'Wine Bar' },
@@ -130,6 +132,7 @@ const features = [
 ]
 
 const amenitiesList = [
+  'Casa da Mata',
   'Piscinas adulto e infantil, borda infinita',
   'Coworking • Mini Market • Espaço Delivery',
   'Spa • Sauna • Área Fitness Interna e Externa',

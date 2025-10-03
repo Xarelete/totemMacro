@@ -80,28 +80,51 @@
 </template>
 
 <script setup>
-import f1 from '../../Material Altus/DECORADO/05e29536-982a-4a7b-8301-6c0ea7aa5a6d.jpg'
-import f2 from '../../Material Altus/DECORADO/770f3342-b93f-4b72-afcb-d43c373c158b.jpg'
-import f3 from '../../Material Altus/DECORADO/b4a934d3-b138-4997-97a5-0105a8341784.jpg'
-import f4 from '../../Material Altus/DECORADO/3a00508c-2d99-4ae2-a286-e475e125f472.jpg'
-import f5 from '../../Material Altus/DECORADO/8bbc0f80-b349-4712-b905-eb63cb274352.jpg'
-import f6 from '../../Material Altus/DECORADO/6fe21150-d589-482b-8a74-144cc661f7c9.jpg'
-import f7 from '../../Material Altus/DECORADO/be401863-d501-4254-8f1f-392e7f7fa6d6.jpg'
-import f8 from '../../Material Altus/DECORADO/367ca43d-dcee-46a5-8342-8936ea7eae5f.jpg'
-import f9 from '../../Material Altus/DECORADO/4d6436fa-1b6e-41e8-a42b-90286243520c.jpg'
+import quartoCasal1 from '../../Material Altus/DECORADO/quarto-casal-1.jpg'
+import quartoCasal2 from '../../Material Altus/DECORADO/quarto-casal-2.jpg'
+import quartoCasal3 from '../../Material Altus/DECORADO/quarto-casal-3.jpg'
+import quartoCasal4 from '../../Material Altus/DECORADO/quarto-casal-4.jpg'
+import quartoCriancas1 from '../../Material Altus/DECORADO/quarto-criancas-1.jpg'
+import quartoCriancas2 from '../../Material Altus/DECORADO/quarto-criancas-2.jpg'
+import quartoCriancas3 from '../../Material Altus/DECORADO/quarto-criancas-3.jpg'
+import living1 from '../../Material Altus/DECORADO/living-1.jpg'
+import living2 from '../../Material Altus/DECORADO/living-2.jpg'
+import living3 from '../../Material Altus/DECORADO/living-3.jpg'
+import living4 from '../../Material Altus/DECORADO/living-4.jpg'
+import living5 from '../../Material Altus/DECORADO/living-5.jpg'
+import homeOffice2 from '../../Material Altus/DECORADO/home-office-2.jpg'
+import homeOffice3 from '../../Material Altus/DECORADO/home-office-3.jpg'
+import homeOffice from '../../Material Altus/DECORADO/home-office.jpg'
+import banheiro2 from '../../Material Altus/DECORADO/banheiro-2.jpg'
+import banheiroSuite2 from '../../Material Altus/DECORADO/banheiro-suite-2.jpg'
+import banheiroSuite from '../../Material Altus/DECORADO/banheiro-suite.jpg'
+import lavabo from '../../Material Altus/DECORADO/lavabo.jpg'
+import lavanderia from '../../Material Altus/DECORADO/lavanderia.jpg'
+
 import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
 import { ref, computed } from 'vue'
 
 const fotos = [
-  { img: f1, title: 'Estar integrado ao jantar' },
-  { img: f2, title: 'Varanda gourmet' },
-  { img: f3, title: 'Suíte principal' },
-  { img: f4, title: 'Cozinha funcional' },
-  { img: f5, title: 'Banho com ventilação natural' },
-  { img: f6, title: 'Dormitório juvenil' },
-  { img: f7, title: 'Espaço home office' },
-  { img: f8, title: 'Living ampliado' },
-  { img: f9, title: 'Detalhes do decorado' },
+  { img: quartoCasal1, title: 'Suíte principal' },
+  { img: quartoCasal2, title: 'Quarto casal decorado' },
+  { img: quartoCasal3, title: 'Detalhes suíte casal' },
+  { img: quartoCasal4, title: 'Ambiente suíte casal' },
+  { img: quartoCriancas1, title: 'Dormitório infantil' },
+  { img: quartoCriancas2, title: 'Quarto das crianças' },
+  { img: quartoCriancas3, title: 'Dormitório juvenil' },
+  { img: living1, title: 'Living integrado' },
+  { img: living2, title: 'Living decorado' },
+  { img: living3, title: 'Detalhes do living' },
+  { img: living4, title: 'Sala de estar ampliada' },
+  { img: living5, title: 'Estar e jantar integrados' },
+  { img: homeOffice2, title: 'Espaço home office' },
+  { img: homeOffice3, title: 'Home office funcional' },
+  { img: homeOffice, title: 'Área de trabalho' },
+  { img: banheiro2, title: 'Banheiro social' },
+  { img: banheiroSuite2, title: 'Banho da suíte' },
+  { img: banheiroSuite, title: 'Banheiro suíte' },
+  { img: lavabo, title: 'Lavabo decorado' },
+  { img: lavanderia, title: 'Lavanderia' },
 ]
 
 const totalFotos = fotos.length
