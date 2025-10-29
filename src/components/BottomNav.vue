@@ -39,7 +39,7 @@ const links = computed(() => {
     { to: `${prefix.value}/plantas`, label: 'Plantas' },
     { to: `${prefix.value}/lazer`, label: 'Lazer' },
     { to: `${prefix.value}/fotos`, label: 'Fotos' },
-    { to: `${prefix.value}/vista-dos-andares`, label: 'Vista dos Andares' }
+    { to: `${prefix.value}/vista-dos-andares`, label: prefix.value === '/altus' ? 'Vista dos Andares' : 'Tour 360' }
   ]
 })
 
