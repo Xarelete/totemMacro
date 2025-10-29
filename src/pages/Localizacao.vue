@@ -8,14 +8,14 @@
         </Transition>
 
         <Transition name="item" appear>
-          <p class="mt-3 text-white/90">
+          <p class="text-white/90">
             Rua Iraci Gonçalves Ferreira, nº 100 — Jardim América, São José dos Campos/SP.
           </p>
         </Transition>
 
         <Transition name="item" appear>
           <div class="flex flex-col gap-4">
-            <div class="flex-1 rounded-3xl overflow-hidden border border-white/20 shadow-2xl backdrop-blur-sm min-h-[22rem] lg:min-h-[28rem]">
+            <div class="flex-1 rounded-3xl overflow-hidden border border-white/20 shadow-2xl backdrop-blur-sm min-h-[22rem] lg:min-h-[26rem] w-[620px] h-[400px]">
               <img :src="mapa" alt="Mapa de localização — Altus América" class="w-full h-full object-cover" />
             </div>
 
@@ -36,8 +36,8 @@
           <Transition name="item" appear>
             <h3 class="text-xl font-semibold text-white">Por perto</h3>
           </Transition>
-          <TransitionGroup name="item" appear tag="ul" class="grid gap-4 text-white">
-            <li v-for="(p, i) in proximos" :key="p" class="p-5 rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm shadow-lg" :style="{ transitionDelay: `${i * 80}ms` }">
+          <TransitionGroup name="item" appear tag="ul" class="grid gap-3 text-white">
+            <li v-for="(p, i) in proximos" :key="p" class="px-5 py-[0.6rem] rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm shadow-lg" :style="{ transitionDelay: `${i * 80}ms` }">
               {{ p }}
             </li>
           </TransitionGroup>
@@ -59,8 +59,8 @@
 </template>
 
 <script setup>
-import mapa from '../../Material Altus/LOCALIZAÇÃO/localizacao-full.jpeg'
-import plantaTorres from '../../Material Altus/LOCALIZAÇÃO/planta-implantacao-torres.jpeg'
+import mapa from '../../materiais/localizacao/localizacao-full.jpeg'
+import plantaTorres from '../../materiais/localizacao/planta-implantacao-torres.jpeg'
 import { ref } from 'vue'
 
 const proximos = [
@@ -75,7 +75,7 @@ const proximos = [
   'Ponto Garden — 2 min'
 ]
 
-import background from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
+import background from '../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
 const bgStyle = {
   backgroundImage: `url(${background})`,
   backgroundSize: 'cover',

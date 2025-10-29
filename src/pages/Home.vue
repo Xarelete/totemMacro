@@ -5,7 +5,7 @@
       <img
         :src="hero"
         alt="Fachada Altus América"
-        class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain"
+        class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 h-full w-auto"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
@@ -39,6 +39,6 @@
 </template>
 
 <script setup>
-import hero from '../../Material Altus/IMAGENS EM ALTA/2 TORRES HORIZONTAL.jpg'
-import logo from '../../Material Altus/IDENTIDADE VISUAL/LOGO.png'
+import hero from '../../materiais/imagens/2-TORRES-HORIZONTAL.jpg'
+import logo from '../../materiais/identidade-visual/LOGO.png'
 </script>

@@ -63,7 +63,7 @@
               </div>
             </div>
 
-            <div class="flex items-center justify-center gap-2 text-white/70 text-sm">
+            <div class="hidden flex items-center justify-center gap-2 text-white/70 text-sm">
               <span>{{ currentIndex + 1 }} / {{ features.length }}</span>
             </div>
 
@@ -84,12 +84,18 @@
           </Transition>
           <TransitionGroup name="item" appear tag="ul" class="mt-4 space-y-2 text-white/80">
             <li
-              v-for="(a, idx) in amenitiesList"
-              :key="a"
-              class="p-4 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm shadow-lg"
+              v-for="(featureItem, idx) in features"
+              :key="featureItem.title"
+              class="p-4 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm shadow-lg cursor-pointer transition"
+              :class="{ 'bg-white/20 border-white/60 text-white': currentIndex === idx }"
               :style="{ transitionDelay: `${idx * 50}ms` }"
+              role="button"
+              tabindex="0"
+              @click="goToFeature(idx)"
+              @keydown.enter.prevent="goToFeature(idx)"
+              @keydown.space.prevent="goToFeature(idx)"
             >
-              {{ a }}
+              {{ featureItem.title }}
             </li>
           </TransitionGroup>
         </aside>
@@ -110,15 +116,21 @@
 </template>
 
 <script setup>
-import casaDeCampo from '../../Material Altus/IMAGENS EM ALTA/ALTUS-CASA-DE-CAMPO-ALTA.jpg'
-import academia from '../../Material Altus/IMAGENS EM ALTA/ALTUS-ACADEMIA-CENA-1-ALTA.jpg'
-import gourmet from '../../Material Altus/IMAGENS EM ALTA/ALTUS-GOURMET-CENA-1-ALTA.jpg'
-import wine from '../../Material Altus/IMAGENS EM ALTA/ALTUS-WINE-BAR-ALTA.jpg'
-import brinquedoteca from '../../Material Altus/IMAGENS EM ALTA/ALTUS-BRINQUEDOTECA-LADO-A-ALTA.jpg'
-import coworking from '../../Material Altus/IMAGENS EM ALTA/ALTUS-COWORKING-ALTA.jpg'
-import yoga from '../../Material Altus/IMAGENS EM ALTA/ALTUS-YOGA-ALTA.jpg'
-import plantaLazer from '../../Material Altus/LAZER/planta-lazer.jpeg'
-import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
+import casaDeCampo from '../../materiais/imagens/ALTUS-CASA-DE-CAMPO-ALTA.jpg'
+import academia from '../../materiais/imagens/ALTUS-ACADEMIA-CENA-1-ALTA.jpg'
+import gourmet from '../../materiais/imagens/ALTUS-GOURMET-CENA-1-ALTA.jpg'
+import wine from '../../materiais/imagens/ALTUS-WINE-BAR-ALTA.jpg'
+import brinquedoteca from '../../materiais/imagens/ALTUS-BRINQUEDOTECA-LADO-A-ALTA.jpg'
+import coworking from '../../materiais/imagens/ALTUS-COWORKING-ALTA.jpg'
+import yoga from '../../materiais/imagens/ALTUS-YOGA-ALTA.jpg'
+import piscinas from '../../materiais/imagens/ALTUSPISCINAS-ALTA.jpg'
+import spa from '../../materiais/imagens/ALTUS-SPA-ALTA.jpg'
+import beach from '../../materiais/imagens/ALTUS-BEACH.jpg'
+import jovem from '../../materiais/imagens/ALTUS-ESPAÇO-JOVEM-ALTA.jpg'
+import churras from '../../materiais/imagens/ALTUS-CHURRASQUEIRA-ALTA.jpg'
+
+import plantaLazer from '../../materiais/lazer/planta-lazer.jpeg'
+import bgCouro from '../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
 import { ref, computed } from 'vue'
 
 const features = [
@@ -129,19 +141,12 @@ const features = [
   { img: brinquedoteca, title: 'Brinquedoteca' },
   { img: coworking, title: 'Coworking' },
   { img: yoga, title: 'Espaço Yoga' },
-]
-
-const amenitiesList = [
-  'Casa da Mata',
-  'Piscinas adulto e infantil, borda infinita',
-  'Coworking • Mini Market • Espaço Delivery',
-  'Spa • Sauna • Área Fitness Interna e Externa',
-  'Quadra de Beach Tennis oficial',
-  'Salão de Festas • Salão de Jogos',
-  'Brinquedoteca • Baby Care • Baby Space',
-  'Pet Care • Pet Place • Bicicletário',
-  'Espaço CrossFit • Redário • Fireplace',
-  'Praça Interna • Lounge da Piscina',
+  { img: piscinas, title: 'Piscinas' },
+  { img: spa, title: 'Spa' },
+  { img: beach, title: 'Quadra de Beach Tennis' },
+  { img: jovem, title: 'Espaço Jovem' },
+  { img: churras, title: 'Churrasqueira' },
+  
 ]
 
 const totalFeatures = features.length
@@ -168,5 +173,11 @@ const nextFeature = () => {
 const prevFeature = () => {
   if (!totalFeatures) return
   currentIndex.value = (currentIndex.value - 1 + totalFeatures) % totalFeatures
+}
+
+const goToFeature = (index) => {
+  if (!totalFeatures) return
+  const normalized = ((index % totalFeatures) + totalFeatures) % totalFeatures
+  currentIndex.value = normalized
 }
 </script>

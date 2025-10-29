@@ -3,22 +3,19 @@
     <div class="absolute inset-0 -z-10 bg-cover bg-center" :style="{ backgroundImage: `url(${bgCouro})` }"></div>
     <div class="absolute inset-y-0 right-0 left-1/2 z-0 hidden lg:block bg-no-repeat bg-right bg-contain pointer-events-none" :style="{ backgroundImage: `url(${torreNoturna})` }"></div>
 
-    <div class="relative z-10 mx-auto max-w-[1200px] xl:max-w-[1400px] px-4 py-16 lg:py-20 text-white">
-      <div class="lg:grid lg:grid-cols-1 lg:gap-8">
+    <div class="relative z-10 mx-auto max-w-[1200px] xl:max-w-[1200px] px-4 py-16 lg:py-10 text-white">
+      <div class="lg:grid lg:grid-cols-1 lg:gap-8 max-w-[800px]">
         <!-- Left column: content -->
         <div>
           <Transition name="item" appear>
             <h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Ficha Técnica</h2>
-          </Transition>
-          <Transition name="item" appear>
-            <img :src="logoCouro" alt="Altus América" class="mt-3 h-10 sm:h-12 w-auto" />
           </Transition>
 
           <TransitionGroup
             name="item"
             appear
             tag="div"
-            class="mt-6 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]"
+            class="mt-3 grid gap-4 grid-cols-3"
           >
             <div
               v-for="(s, idx) in specs"
@@ -35,7 +32,7 @@
             name="item"
             appear
             tag="div"
-            class="mt-8 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]"
+            class="mt-4 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]"
           >
             <div
               v-for="(d, idx) in difs"
@@ -49,7 +46,7 @@
           </TransitionGroup>
 
           <Transition name="item" appear>
-            <div class="mt-8">
+            <div class="mt-4">
               <button @click="openFicha" class="inline-block px-4 py-2 rounded-full border border-white/60 text-white hover:bg-white hover:text-stone-900">
                 Ver ficha técnica completa
               </button>
@@ -66,7 +63,7 @@
         <button @click="closeFicha" class="absolute -top-10 right-0 px-3 py-1.5 rounded-full bg-white text-stone-900 shadow hover:shadow-md">Fechar</button>
         <div id="ficha-tecnica" class="w-full">
           <Transition name="fade" appear>
-            <img :src="ficha" alt="Ficha Técnica — Altus América" class="w-full rounded-2xl border shadow-lg" />
+            <img :src="ficha" alt="Ficha Técnica — Altus América" class="w-[95%] rounded-2xl border shadow-lg" />
           </Transition>
         </div>
       </div>
@@ -75,11 +72,11 @@
 </template>
 
 <script setup>
-import ficha from '../../Material Altus/FICHA TÉCNICA/Informações.png'
-import logoCouro from '../../Material Altus/IDENTIDADE VISUAL/LOGO ALTUS FUNDO COURO.png'
+import ficha from '../../materiais/ficha-tecnica/Informacoes.png'
+import logoCouro from '../../materiais/identidade-visual/LOGO-ALTUS-FUNDO-COURO.png'
 import { ref } from 'vue'
-import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
-import torreNoturna from '../../Material Altus/IMAGENS EM ALTA/TORRE ÚNICA NOTURNA.png'
+import bgCouro from '../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
+import torreNoturna from '../../materiais/imagens/TORRE-UNICA-NOTURNA.png'
 const showFicha = ref(false)
 const openFicha = () => { showFicha.value = true }
 const closeFicha = () => { showFicha.value = false }

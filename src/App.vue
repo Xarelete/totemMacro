@@ -6,11 +6,21 @@
       </Transition>
     </RouterView>
 
+    <!-- Back to Home -->
+    <RouterLink
+      v-if="showBack"
+      to="/"
+      class="fixed left-4 top-4 z-50 rounded-full bg-white/95 px-4 py-2 text-base sm:text-lg font-semibold text-stone-900 shadow-lg hover:bg-white"
+      aria-label="Voltar para a seleção de empreendimentos"
+    >
+      ← Início
+    </RouterLink>
+
     <BottomNav />
 
     <Transition name="fade" appear>
       <div
-        v-if="showFullscreenModal"
+        v-if="showFullscreenModal && isLanding"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4"
         role="dialog"
         aria-modal="true"
@@ -58,10 +68,14 @@
 
 <script setup>
 import BottomNav from './components/BottomNav.vue'
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 const showFullscreenModal = ref(true)
 const isFullscreen = ref(!!document.fullscreenElement)
+const route = useRoute()
+const isLanding = computed(() => route.path === '/')
+const showBack = computed(() => route.path.startsWith('/altus') || route.path.startsWith('/mirati'))
 
 const handleFullscreenChange = () => {
   isFullscreen.value = !!document.fullscreenElement

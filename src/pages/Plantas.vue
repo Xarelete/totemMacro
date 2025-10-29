@@ -12,11 +12,11 @@
 
       <TransitionGroup name="item" appear tag="div" class="mt-6 grid sm:grid-cols-2 gap-6">
         <figure v-for="(p, idx) in plantas" :key="p.title" class="rounded-2xl overflow-hidden border bg-white" :style="{ transitionDelay: `${idx * 90}ms` }">
-          <img :src="p.img" :alt="p.alt" class="w-full h-auto" />
+          <img :src="p.img" :alt="p.alt" class="w-full h-auto cursor-zoom-in" @click="openHigh(p.img, p.alt)" />
           <figcaption class="p-4 text-stone-900">
             <h3 class="font-semibold">{{ p.title }}</h3>
             <p class="mt-1 text-stone-700 text-sm">{{ p.desc }}</p>
-            <a :href="p.img" @click.prevent="openHigh(p.img, p.alt)" class="inline-block mt-3 px-4 py-2 rounded-full border hover:bg-stone-50">Ver em alta</a>
+            <a :href="p.img" @click.prevent="openHigh(p.img, p.alt)" class="hidden mt-3 px-4 py-2 rounded-full border hover:bg-stone-50">Ver em alta</a>
           </figcaption>
         </figure>
       </TransitionGroup>
@@ -36,9 +36,9 @@
 </template>
 
 <script setup>
-import planta2 from '../../Material Altus/PLANTAS/PLANTA DE 2 DORMITÓRIOS.jpg'
-import planta3 from '../../Material Altus/PLANTAS/PLANTA DE 3 DORMITÓRIOS.jpg'
-import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
+import planta2 from '../../materiais/plantas/PLANTA-DE-2-DORMITORIOS.jpg'
+import planta3 from '../../materiais/plantas/PLANTA-DE-3-DORMITORIOS.jpg'
+import bgCouro from '../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
 import { ref } from 'vue'
 
 const plantas = [

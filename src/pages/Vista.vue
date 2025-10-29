@@ -2,7 +2,7 @@
   <section class="relative min-h-dvh">
     <div class="absolute inset-0 -z-10 bg-cover bg-center" :style="{ backgroundImage: `url(${bgCouro})` }"></div>
 
-    <div class="mx-auto max-w-[1200px] xl:max-w-[1400px] px-4 py-16 lg:py-20 text-white">
+    <div class="mx-auto max-w-[1200px] xl:max-w-[1400px] px-4 py-8 lg:py-8 text-white">
       <Transition name="item" appear>
         <h2 class="text-3xl sm:text-4xl font-semibold font-[Cinzel]">Vista dos Andares</h2>
       </Transition>
@@ -35,7 +35,7 @@
               :src="torreNoturna"
               alt="Vista noturna da torre do Altus América"
               class="w-full h-auto object-contain"
-              :style="{ maxHeight: 'calc(100vh - 12rem)' }"
+              :style="{ maxHeight: 'calc(100vh - 16rem)' }"
             />
           </div>
         </Transition>
@@ -76,8 +76,8 @@
 </template>
 
 <script setup>
-import bgCouro from '../../Material Altus/IDENTIDADE VISUAL/BACKGROUND COURO VERDE.png'
-import torreNoturna from '../../Material Altus/IMAGENS EM ALTA/TORRE ÚNICA NOTURNA.png'
+import bgCouro from '../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
+import torreNoturna from '../../materiais/imagens/TORRE-UNICA-NOTURNA.png'
 import { ref } from 'vue'
 
 const kuulaUrl = 'https://kuula.co/share/collection/7D4G0?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1&inst=pt'
