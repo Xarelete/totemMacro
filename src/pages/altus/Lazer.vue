@@ -46,7 +46,7 @@
 
         <aside>
           <Transition name="item" appear>
-            <h3 class="text-xl font-semibold">+ de 2.000 m² de lazer</h3>
+            <h3 class="text-xl font-semibold">mais de 12 itens de lazer</h3>
           </Transition>
           <TransitionGroup name="item" appear tag="ul" class="mt-4 space-y-2 text-white/80">
             <li v-for="(featureItem, idx) in features" :key="featureItem.title" class="p-4 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm shadow-lg cursor-pointer transition" :class="{ 'bg-white/20 border-white/60 text-white': currentIndex === idx }" :style="{ transitionDelay: `${idx * 50}ms` }" role="button" tabindex="0" @click="goToFeature(idx)" @keydown.enter.prevent="goToFeature(idx)" @keydown.space.prevent="goToFeature(idx)">

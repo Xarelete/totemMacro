@@ -1,6 +1,6 @@
 <template>
   <section class="relative min-h-dvh">
-    <div class="absolute inset-0 -z-10 bg-cover bg-center" :style="{ backgroundImage: `url(${bgCouro})` }"></div>
+    <div class="absolute inset-0 -z-10" :style="{ backgroundColor: '#002262' }"></div>
 
     <div class="mx-auto max-w-[1200px] xl:max-w-[1400px] px-4 py-16 lg:py-20 text-white">
       <Transition name="item" appear>
@@ -46,8 +46,10 @@
       <div class="absolute inset-0 bg-black/70" @click="closeHigh"></div>
       <div class="relative z-10 w-full max-w-5xl">
         <button @click="closeHigh" class="absolute -top-10 right-0 px-3 py-1.5 rounded-full bg-white text-stone-900 shadow hover:shadow-md">Fechar</button>
+        <button v-if="canNavigate" @click="modalPrev" class="absolute left-0 top-1/2 -translate-y-1/2 ml-2 sm:ml-4 rounded-full bg-white/90 text-stone-900 w-10 h-10 sm:w-12 sm:h-12 shadow hover:bg-white" aria-label="Anterior">‹</button>
+        <button v-if="canNavigate" @click="modalNext" class="absolute right-0 top-1/2 -translate-y-1/2 mr-2 sm:mr-4 rounded-full bg-white/90 text-stone-900 w-10 h-10 sm:w-12 sm:h-12 shadow hover:bg-white" aria-label="Próxima">›</button>
         <Transition name="fade" appear>
-          <img :src="highSrc" :alt="highAlt" class="w-full h-auto rounded-2xl border shadow-lg" />
+          <img :src="highSrc" :alt="highAlt" class="block mx-auto max-w-full max-h-[90vh] w-auto h-auto rounded-2xl border shadow-lg object-contain" />
         </Transition>
       </div>
     </div>
@@ -55,52 +57,13 @@
 </template>
 
 <script setup>
-import quartoCasal1 from '../../../materiais/decorado/quarto-casal-1.jpg'
-import quartoCasal2 from '../../../materiais/decorado/quarto-casal-2.jpg'
-import quartoCasal3 from '../../../materiais/decorado/quarto-casal-3.jpg'
-import quartoCasal4 from '../../../materiais/decorado/quarto-casal-4.jpg'
-import quartoCriancas1 from '../../../materiais/decorado/quarto-criancas-1.jpg'
-import quartoCriancas2 from '../../../materiais/decorado/quarto-criancas-2.jpg'
-import quartoCriancas3 from '../../../materiais/decorado/quarto-criancas-3.jpg'
-import living1 from '../../../materiais/decorado/living-1.jpg'
-import living2 from '../../../materiais/decorado/living-2.jpg'
-import living3 from '../../../materiais/decorado/living-3.jpg'
-import living4 from '../../../materiais/decorado/living-4.jpg'
-import living5 from '../../../materiais/decorado/living-5.jpg'
-import homeOffice2 from '../../../materiais/decorado/home-office-2.jpg'
-import homeOffice3 from '../../../materiais/decorado/home-office-3.jpg'
-import homeOffice from '../../../materiais/decorado/home-office.jpg'
-import banheiro2 from '../../../materiais/decorado/banheiro-2.jpg'
-import banheiroSuite2 from '../../../materiais/decorado/banheiro-suite-2.jpg'
-import banheiroSuite from '../../../materiais/decorado/banheiro-suite.jpg'
-import lavabo from '../../../materiais/decorado/lavabo.jpg'
-import lavanderia from '../../../materiais/decorado/lavanderia.jpg'
-
-import bgCouro from '../../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
 import { ref, computed } from 'vue'
 
-const fotos = [
-  { img: quartoCasal1, title: 'Suíte principal' },
-  { img: quartoCasal2, title: 'Quarto casal decorado' },
-  { img: quartoCasal3, title: 'Detalhes suíte casal' },
-  { img: quartoCasal4, title: 'Ambiente suíte casal' },
-  { img: quartoCriancas1, title: 'Dormitório infantil' },
-  { img: quartoCriancas2, title: 'Quarto das crianças' },
-  { img: quartoCriancas3, title: 'Dormitório juvenil' },
-  { img: living1, title: 'Living integrado' },
-  { img: living2, title: 'Living decorado' },
-  { img: living3, title: 'Detalhes do living' },
-  { img: living4, title: 'Sala de estar ampliada' },
-  { img: living5, title: 'Estar e jantar integrados' },
-  { img: homeOffice2, title: 'Espaço home office' },
-  { img: homeOffice3, title: 'Home office funcional' },
-  { img: homeOffice, title: 'Área de trabalho' },
-  { img: banheiro2, title: 'Banheiro social' },
-  { img: banheiroSuite2, title: 'Banho da suíte' },
-  { img: banheiroSuite, title: 'Banheiro suíte' },
-  { img: lavabo, title: 'Lavabo decorado' },
-  { img: lavanderia, title: 'Lavanderia' },
-]
+// Imagens públicas do Mirati (decorado) servidas de /public/mirati/decorado
+const fotos = Array.from({ length: 9 }, (_, i) => ({
+  img: `/mirati/decorado/decorado${i + 1}.jpeg`,
+  title: `Decorado ${i + 1}`
+}))
 
 const totalFotos = fotos.length
 const currentIndex = ref(0)
@@ -113,8 +76,27 @@ const currentFoto = computed(() => {
 const showHigh = ref(false)
 const highSrc = ref('')
 const highAlt = ref('')
-const openHigh = (src, alt) => { highSrc.value = src; highAlt.value = alt; showHigh.value = true }
-const closeHigh = () => { showHigh.value = false }
+const modalIndex = ref(-1)
+const canNavigate = computed(() => modalIndex.value >= 0 && totalFotos > 1)
+
+const syncModalToIndex = () => {
+  const item = fotos[((modalIndex.value % totalFotos) + totalFotos) % totalFotos]
+  if (!item) return
+  highSrc.value = item.img
+  highAlt.value = item.title
+}
+
+const openHigh = (src, alt) => {
+  const idx = fotos.findIndex((f) => f.img === src)
+  modalIndex.value = idx
+  highSrc.value = src
+  highAlt.value = alt
+  showHigh.value = true
+}
+const closeHigh = () => { showHigh.value = false; modalIndex.value = -1 }
+
+const modalNext = () => { if (!canNavigate.value) return; modalIndex.value = (modalIndex.value + 1) % totalFotos; syncModalToIndex() }
+const modalPrev = () => { if (!canNavigate.value) return; modalIndex.value = (modalIndex.value - 1 + totalFotos) % totalFotos; syncModalToIndex() }
 
 const nextFoto = () => { if (!totalFotos) return; currentIndex.value = (currentIndex.value + 1) % totalFotos }
 const prevFoto = () => { if (!totalFotos) return; currentIndex.value = (currentIndex.value - 1 + totalFotos) % totalFotos }

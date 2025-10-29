@@ -9,7 +9,7 @@
         </Transition>
 
         <Transition name="item" appear>
-          <p class="mt-4 sm:mt-5 text-white/95 text-xl sm:text-2xl 2xl:text-3xl leading-relaxed max-w-4xl 2xl:max-w-5xl mx-auto">Selecione abaixo para explorar as páginas do empreendimento.</p>
+          <p class="mt-4 sm:mt-5 text-white/95 text-xl sm:text-2xl 2xl:text-3xl leading-relaxed max-w-4xl 2xl:max-w-5xl mx-auto">Selecione abaixo para explorar nossos empreendimentos</p>
         </Transition>
       </div>
 
@@ -36,7 +36,7 @@
               <span class="text-sm sm:text-base 2xl:text-lg tracking-wide text-stone-700">Jardim Ismênia — SJC/SP</span>
             </div>
             <h2 class="mt-3 text-4xl sm:text-5xl 2xl:text-6xl font-semibold font-[Cinzel]">Mirati Residenciais</h2>
-            <p class="text-white/90 mt-1 text-base sm:text-lg 2xl:text-xl">2 DORM | SUÍTE | VARANDA GOURMET | LAZER COMPLETO</p>
+            <p class="text-white/90 mt-1 text-base sm:text-lg 2xl:text-xl">2 Torres • 58m² • Suíte e Varanda gourmet • + Lazer completo</p>
           </div>
         </RouterLink>
       </div>

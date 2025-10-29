@@ -24,13 +24,6 @@
             </div>
           </TransitionGroup>
 
-          <Transition name="item" appear>
-            <div class="mt-4">
-              <button @click="openFicha" class="inline-block px-4 py-2 rounded-full border border-white/60 text-white hover:bg-white hover:text-stone-900">
-                Ver ficha técnica completa
-              </button>
-            </div>
-          </Transition>
         </div>
       </div>
     </div>
@@ -60,7 +53,7 @@ const closeFicha = () => { showFicha.value = false }
 const specs = [
   { title: 'Empreendimento', desc: 'Mirati Residências' },
   { title: 'Endereço', desc: 'Rua Alteia, nº 104<br/>Jardim Ismênia — São José dos Campos/SP' },
-  { title: 'Área do Térreo', desc: '7.768,71 m²' },
+  { title: 'Área do Terreno', desc: '7.768,71 m²' },
   { title: 'Área Construída', desc: '24.744,43 m²' },
   { title: 'Torres', desc: '2 Torres Residenciais' },
   { title: 'Pavimentos', desc: '20 pavimentos por torre' },
@@ -70,7 +63,10 @@ const specs = [
 ]
 
 const difs = [
-  { title: 'Diferenciais — Áreas Comuns', text: '' },
+  {
+    title: 'Diferenciais — Áreas Comuns',
+    text: 'Coworking, piscina, brinquedoteca, mini market, academia, salão gourmet, salão de festas, quadra poliesportiva, churrasqueira, redário, playground e lavanderia OMO'
+  }
 ]
 </script>
 
