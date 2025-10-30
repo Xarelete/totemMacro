@@ -67,13 +67,7 @@
               <span>{{ currentIndex + 1 }} / {{ features.length }}</span>
             </div>
 
-            <button
-              type="button"
-              @click="openHigh(plantaLazer, 'Planta completa de lazer')"
-              class="self-start inline-flex items-center gap-2 rounded-full bg-white text-stone-900 px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition animate-pulse"
-            >
-              Veja planta completa
-            </button>
+            
           </div>
         </Transition>
 

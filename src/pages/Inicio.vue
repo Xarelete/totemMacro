@@ -36,7 +36,7 @@
               <span class="text-sm sm:text-base 2xl:text-lg tracking-wide text-stone-700">Jardim Ismênia — SJC/SP</span>
             </div>
             <h2 class="mt-3 text-4xl sm:text-5xl 2xl:text-6xl font-semibold font-[Cinzel]">Mirati Residenciais</h2>
-            <p class="text-white/90 mt-1 text-base sm:text-lg 2xl:text-xl">2 Torres • 58m² • Suíte e Varanda gourmet • + Lazer completo</p>
+            <p class="text-white/90 mt-1 text-base sm:text-lg 2xl:text-xl">2 Torres • 58m² • Suíte e varanda gourmet • + Lazer completo</p>
           </div>
         </RouterLink>
       </div>

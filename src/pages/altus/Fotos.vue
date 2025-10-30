@@ -82,7 +82,6 @@ import bgCouro from '../../../materiais/identidade-visual/BACKGROUND-COURO-VERDE
 import { ref, computed } from 'vue'
 
 const fotos = [
-  { img: quartoCasal1, title: 'Suíte principal' },
   { img: quartoCasal2, title: 'Quarto casal decorado' },
   { img: quartoCasal3, title: 'Detalhes suíte casal' },
   { img: quartoCasal4, title: 'Ambiente suíte casal' },

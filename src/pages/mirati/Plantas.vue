@@ -36,7 +36,7 @@
 <script setup>
 import { ref } from 'vue'
 
-// Imagens públicas do Mirati (coloque os arquivos anexados nestes caminhos)
+// Imagens públicas do Mirati (Planta A/B)
 const plantas = [
   {
     img: '/mirati/plantas/planta-66.jpg?v=1',
@@ -44,9 +44,9 @@ const plantas = [
       '/mirati/plantas/planta a.jpg?v=1',
       '/mirati/plantas/planta%20a.jpg?v=1'
     ],
-    alt: 'Planta 2 dormitórios — 66,66 m²',
-    title: '66,66 m² — 2 dormitórios (1 suíte)',
-    desc: '1 banheiro • cozinha • área de serviço • sala de jantar/estar • varanda gourmet • 1 vaga'
+    alt: 'Planta A — 58,26 m²',
+    title: 'Planta A — 58,26 m²',
+    desc: 'dois dormitórios, sendo 1 suíte • 1 banheiro • cozinha • sala de jantar/estar • varanda gourmet • 1 vaga de garagem'
   },
   {
     img: '/mirati/plantas/planta-86.jpg?v=1',
@@ -54,9 +54,9 @@ const plantas = [
       '/mirati/plantas/planta b.jpg?v=1',
       '/mirati/plantas/planta%20b.jpg?v=1'
     ],
-    alt: 'Planta 3 dormitórios — 86,95 m²',
-    title: '86,95 m² — 3 dormitórios (1 suíte)',
-    desc: '1 banheiro • 1 lavabo • cozinha • área de serviço • sala de jantar/estar • varanda gourmet • 2 vagas com hobby box'
+    alt: 'Planta B — 58,31 m²',
+    title: 'Planta B — 58,31 m²',
+    desc: 'dois dormitórios, sendo 1 suíte • 1 banheiro • cozinha • sala de jantar/estar • varanda gourmet • 1 vaga de garagem'
   }
 ]
 

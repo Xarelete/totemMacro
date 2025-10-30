@@ -8,7 +8,7 @@
 
         <Transition name="item" appear>
           <p class="text-white/90">
-            Rua Alteia, 104, São José dos Campos - SP
+            Rua Alteia, 104 — Jardim Ismênia, São José dos Campos/SP.
           </p>
         </Transition>
 
@@ -23,13 +23,7 @@
               </iframe>
             </div>
 
-            <button
-              type="button"
-              @click="openPdf"
-              class="inline-flex w-max items-center gap-2 rounded-full bg-white text-stone-900 px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition animate-pulse"
-            >
-              Veja planta completa
-            </button>
+            
           </div>
         </Transition>
       </div>

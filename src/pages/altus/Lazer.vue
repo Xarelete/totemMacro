@@ -38,15 +38,13 @@
               </div>
             </div>
 
-            <button type="button" @click="openHigh(plantaLazer, 'Planta completa de lazer')" class="self-start inline-flex items-center gap-2 rounded-full bg-white text-stone-900 px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition animate-pulse">
-              Veja planta completa
-            </button>
+            
           </div>
         </Transition>
 
         <aside>
           <Transition name="item" appear>
-            <h3 class="text-xl font-semibold">mais de 12 itens de lazer</h3>
+            <h3 class="text-xl font-semibold">Mais de 12 itens de lazer</h3>
           </Transition>
           <TransitionGroup name="item" appear tag="ul" class="mt-4 space-y-2 text-white/80">
             <li v-for="(featureItem, idx) in features" :key="featureItem.title" class="p-4 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm shadow-lg cursor-pointer transition" :class="{ 'bg-white/20 border-white/60 text-white': currentIndex === idx }" :style="{ transitionDelay: `${idx * 50}ms` }" role="button" tabindex="0" @click="goToFeature(idx)" @keydown.enter.prevent="goToFeature(idx)" @keydown.space.prevent="goToFeature(idx)">

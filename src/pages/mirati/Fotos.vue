@@ -60,9 +60,9 @@
 import { ref, computed } from 'vue'
 
 // Imagens públicas do Mirati (decorado) servidas de /public/mirati/decorado
-const fotos = Array.from({ length: 9 }, (_, i) => ({
-  img: `/mirati/decorado/decorado${i + 1}.jpeg`,
-  title: `Decorado ${i + 1}`
+const fotos = Array.from({ length: 8 }, (_, i) => ({
+  img: `/mirati/decorado/decorado${i + 2}.jpeg`,
+  title: `Decorado ${i + 2}`
 }))
 
 const totalFotos = fotos.length

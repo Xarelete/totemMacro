@@ -24,13 +24,7 @@
             </div>
           </TransitionGroup>
 
-          <Transition name="item" appear>
-            <div class="mt-4">
-              <button @click="openFicha" class="inline-block px-4 py-2 rounded-full border border-white/60 text-white hover:bg-white hover:text-stone-900">
-                Ver ficha técnica completa
-              </button>
-            </div>
-          </Transition>
+          
         </div>
       </div>
     </div>
@@ -71,8 +65,8 @@ const specs = [
 ]
 
 const difs = [
-  { title: 'Diferenciais — Áreas Comuns', text: '+30 itens de lazer equipados, climatizados e mobiliados; gerador full; Wi‑Fi; bicicletário; quadra de beach tennis oficial; captação e reaproveitamento de águas pluviais; elevador privativo para visitantes; lavanderia OMO; paisagismo assinado; piscina com borda infinita; ampla academia indoor.' },
-  { title: 'Diferenciais — Áreas Privativas', text: 'Infra para aquecedor a gás; área técnica e pontos/drenos para ar‑condicionado; janela blackout com infra para automação; hobby box no andar (3 dorms); banheiros com ventilação natural; opção de churrasqueira a gás ou carvão; kit personalização; unidades com ISO 9001.' },
+  { title: 'Diferenciais', text: '+30 itens de lazer equipados, climatizados e mobiliados; gerador full; Wi‑Fi; bicicletário; quadra de beach tennis oficial; captação e reaproveitamento de águas pluviais; elevador privativo para visitantes; lavanderia OMO; paisagismo assinado; piscina com borda infinita; ampla academia indoor.' },
+  { title: 'Diferenciais — Áreas Privativas', text: 'Infra para aquecedor a gás; área técnica e pontos/drenos para ar‑condicionado; janela blackout com infra para automação; hobby box no andar (3 dorms); banheiros com ventilação natural; opção de churrasqueira a gás ou carvão; kit personalização; unidades com ISO 9001. Elevador com gerador, janelas com cortina blackout, ventilação natural em todos os banheiros e possibilidade de personalização durante a obra.' },
 ]
 </script>
 
