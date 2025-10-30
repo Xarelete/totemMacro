@@ -1,7 +1,7 @@
 <template>
   <section class="relative min-h-dvh">
     <div class="absolute inset-0 -z-10" :style="{ backgroundColor: '#002262' }"></div>
-    <div class="absolute inset-y-0 right-0 left-1/2 z-0 hidden lg:block bg-no-repeat bg-right bg-contain pointer-events-none" :style="{ backgroundImage: `url(${torreNoturna})` }"></div>
+    <div class="absolute inset-y-0 right-0 left-1/2 z-0 hidden lg:block bg-no-repeat bg-right bg-contain pointer-events-none" :style="{ backgroundImage: `url(${hero2})` }"></div>
 
     <div class="relative z-10 mx-auto max-w-[1200px] xl:max-w-[1200px] px-4 py-16 lg:py-10 text-white">
       <div class="lg:grid lg:grid-cols-1 lg:gap-8 max-w-[800px]">
@@ -47,7 +47,7 @@
 <script setup>
 import ficha from '../../../materiais/ficha-tecnica/Informacoes.png'
 import { ref } from 'vue'
-import torreNoturna from '../../../materiais/imagens/TORRE-UNICA-NOTURNA.png'
+const hero2 = '/mirati/hero2.jpg'
 const showFicha = ref(false)
 const openFicha = () => { showFicha.value = true }
 const closeFicha = () => { showFicha.value = false }
