@@ -26,7 +26,7 @@
 
           <Transition name="item" appear>
             <p class="mt-3 sm:mt-4 text-white/90 max-w-3xl text-base sm:text-lg">
-              2 Torres Residenciais • Tipologias de 66,66 m² e 86,95 m² • +30 itens de lazer
+              2 Torres Residenciais • Tipologias de 66,66 m² e 86,95 m² • 30 itens de lazer
             </p>
           </Transition>
 

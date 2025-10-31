@@ -60,10 +60,17 @@
 import { ref, computed } from 'vue'
 
 // Imagens públicas do Mirati (decorado) servidas de /public/mirati/decorado
-const fotos = Array.from({ length: 8 }, (_, i) => ({
-  img: `/mirati/decorado/decorado${i + 2}.jpeg`,
-  title: `Decorado ${i + 2}`
-}))
+// Ordem ajustada para iniciar pela imagem 8, seguida da 9 e depois 2–7
+const fotos = [
+  { img: '/mirati/decorado/decorado9.jpeg', title: 'Decorado' },
+  { img: '/mirati/decorado/decorado8.jpeg', title: 'Decorado' },
+  { img: '/mirati/decorado/decorado2.jpeg', title: 'Decorado' },
+  { img: '/mirati/decorado/decorado3.jpeg', title: 'Decorado' },
+  { img: '/mirati/decorado/decorado4.jpeg', title: 'Decorado' },
+  { img: '/mirati/decorado/decorado5.jpeg', title: 'Decorado' },
+  { img: '/mirati/decorado/decorado6.jpeg', title: 'Decorado' },
+  { img: '/mirati/decorado/decorado7.jpeg', title: 'Decorado' }
+]
 
 const totalFotos = fotos.length
 const currentIndex = ref(0)

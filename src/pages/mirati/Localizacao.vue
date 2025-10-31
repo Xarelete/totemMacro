@@ -99,15 +99,11 @@ import { ref } from 'vue'
 // fundo sólido (#002262)
 
 const proximos = [
-  'Linha Verde — 1 min',
-  'Rodovia Presidente Dutra — 1 min',
-  'Shopping Jardim Oriente — 5 min',
-  'Shopping Vale Sul — 4 min',
-  'Centro da Juventude — 3 min',
-  'Anel Viário — 5 min',
-  'Drogaria São Paulo — 4 min',
-  'Padaria Flor de Ypê — 4 min',
-  'Ponto Garden — 2 min'
+  '5 min Hospital Municipal',
+  '2 min Berçário e Educação Infantil',
+  '5 min Avenida JK',
+  '5 min Museu Interativo de Ciências',
+  '3 min Supermercado'
 ]
 
 const bgStyle = {

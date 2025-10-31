@@ -20,7 +20,7 @@
 
           <Transition name="item" appear>
             <p class="mt-4 text-white/90 max-w-4xl text-base sm:text-lg">
-              2 Torres • 58m² • Suíte e varanda gourmet • + Lazer completo
+              2 Torres • 58m² • Suíte e varanda gourmet • Lazer completo
             </p>
           </Transition>
         </div>

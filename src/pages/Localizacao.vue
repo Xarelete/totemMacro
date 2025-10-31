@@ -64,15 +64,11 @@ import plantaTorres from '../../materiais/localizacao/planta-implantacao-torres.
 import { ref } from 'vue'
 
 const proximos = [
-  'Linha Verde — 1 min',
-  'Rodovia Presidente Dutra — 1 min',
-  'Shopping Jardim Oriente — 5 min',
-  'Shopping Vale Sul — 4 min',
-  'Centro da Juventude — 3 min',
-  'Anel Viário — 5 min',
-  'Drogaria São Paulo — 4 min',
-  'Padaria Flor de Ypê — 4 min',
-  'Ponto Garden — 2 min'
+  'Hospital Municipal — 5 min',
+  'Berçário e Educação Infantil — 2 min',
+  'Avenida JK — 5 min',
+  'Museu Interativo de Ciências — 5 min',
+  'Supermercado — 3 min'
 ]
 
 import background from '../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
