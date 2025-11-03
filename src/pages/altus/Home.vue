@@ -5,14 +5,14 @@
       <img
         :src="hero"
         alt="Fachada Altus América"
-        class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 h-full w-auto"
+        class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 h-full w-auto kenburns gpu-smooth"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
       <div class="relative z-10 h-[90vh] flex items-end">
         <div class="mx-auto w-full max-w-6xl xl:max-w-[1280px] 2xl:max-w-[1440px] px-4 pb-10 sm:pb-14">
           <Transition name="item" appear>
-            <div class="inline-flex items-center gap-3 bg-white/90 backdrop-blur px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow">
+            <div class="inline-flex items-center gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow liquid-chip">
               <span class="text-xs sm:text-sm 2xl:text-base tracking-wide text-stone-700">Jardim América — São José dos Campos/SP</span>
             </div>
           </Transition>

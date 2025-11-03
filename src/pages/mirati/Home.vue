@@ -1,14 +1,14 @@
 <template>
   <section class="relative">
     <div class="relative h-[93dvh] bg-black">
-      <img :src="heroSrc" alt="Mirati Residenciais" class="absolute inset-0 h-full w-full object-cover" />
+      <img :src="heroSrc" alt="Mirati Residenciais" class="absolute inset-0 h-full w-full object-cover kenburns gpu-smooth" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
       <div class="relative z-10 h-[90vh] flex items-end">
         <div class="mx-auto w-full max-w-6xl px-4 pb-10 sm:pb-14">
           <Transition name="item" appear>
-            <div class="inline-flex items-center gap-3 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow">
-              <span class="text-xs sm:text-sm tracking-wide text-stone-700">Jardim Ismênia — SJC/SP</span>
+            <div class="inline-flex items-center gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow liquid-chip">
+              <span class="text-xs sm:text-sm 2xl:text-base tracking-wide text-stone-700">Jardim Ismênia — São José dos Campos/SP</span>
             </div>
           </Transition>
 

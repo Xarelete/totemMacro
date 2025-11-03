@@ -62,11 +62,15 @@ import { ref } from 'vue'
 import background from '../../../materiais/identidade-visual/BACKGROUND-COURO-VERDE.png'
 
 const proximos = [
-  '5 min Hospital Municipal',
-  '2 min Berçário e Educação Infantil',
-  '5 min Avenida JK',
-  '5 min Museu Interativo de Ciências',
-  '3 min Supermercado'
+  'Linha Verde — 1 min',
+  'Rodovia Presidente Dutra — 1 min',
+  'Ponto Garden — 2 min',
+  'Centro da Juventude — 3 min',
+  'Drogaria São Paulo — 4 min',
+  'Shopping Vale Sul — 4 min',
+  'Shopping Jardim Oriente — 5 min',
+  'Anel Viário — 5 min',
+  'Padaria Flor de Ypê — 4 min'
 ]
 
 const bgStyle = {

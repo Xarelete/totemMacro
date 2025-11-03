@@ -57,16 +57,16 @@ const specs = [
   { title: 'Endereço', desc: 'Rua Iraci Gonçalves Ferreira, nº 100<br/>Jardim América — São José dos Campos/SP' },
   { title: 'Área do Terreno', desc: '14.602,35 m²' },
   { title: 'Área Construída', desc: '40.135,84 m²' },
-  { title: 'Torres', desc: '2 Torres Residenciais' },
+  { title: 'Torres', desc: '2 torres residenciais' },
   { title: 'Pavimentos', desc: '30 (25 residenciais)' },
-  { title: 'Elevadores', desc: '3 por torre com gerador + 1 de transbordo' },
-  { title: 'Unidades', desc: '200 apês de 86,95 m² (3 dorms, 2 vagas, hobby box)<br/>100 apês de 66,66 m² (2 dorms, 1 vaga)' },
+  { title: 'Elevadores', desc: '3 por torre com gerador + 1 elevador de transbordo' },
+  { title: 'Unidades', desc: '200 unidades — 86,95 m² (3 dormitórios, 2 vagas, hobby box)<br/>100 unidades — 66,66 m² (2 dormitórios, 1 vaga)' },
   { title: 'Certificações', desc: 'PBQP‑H • ISO 9001' },
 ]
 
 const difs = [
-  { title: 'Diferenciais', text: '+30 itens de lazer equipados, climatizados e mobiliados; gerador full; Wi‑Fi; bicicletário; quadra de beach tennis oficial; captação e reaproveitamento de águas pluviais; elevador privativo para visitantes; lavanderia OMO; paisagismo assinado; piscina com borda infinita; ampla academia indoor.' },
-  { title: 'Diferenciais — Áreas Privativas', text: 'Infra para aquecedor a gás; área técnica e pontos/drenos para ar‑condicionado; janela blackout com infra para automação; hobby box no andar (3 dorms); banheiros com ventilação natural; opção de churrasqueira a gás ou carvão; kit personalização; unidades com ISO 9001. Elevador com gerador, janelas com cortina blackout, ventilação natural em todos os banheiros e possibilidade de personalização durante a obra.' },
+  { title: 'Diferenciais — Áreas Comuns', text: '+30 itens de lazer (equipados, climatizados e mobiliados); gerador full de energia; Wi‑Fi; bicicletário; quadra de beach tennis oficial; captação e reaproveitamento de águas pluviais; elevador privativo para visitantes; lavanderia OMO; paisagismo assinado; piscina com borda infinita; ampla academia indoor na zona sul.' },
+  { title: 'Diferenciais — Áreas Privativas', text: 'Infra para aquecedor a gás; área técnica e pontos/drenos para ar‑condicionado; janela blackout com infra para automação; hobby box no andar (3 dormitórios); banheiros com ventilação natural; opção de churrasqueira a gás ou carvão; kit personalização; certificação ISO 9001 nas unidades.' },
 ]
 </script>
 

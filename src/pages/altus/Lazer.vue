@@ -16,7 +16,7 @@
               </button>
 
               <Transition name="item" mode="out-in">
-                <figure :key="currentFeature.title" class="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-sm shadow-2xl cursor-pointer" @click="openHigh(currentFeature.img, currentFeature.title)">
+                <figure :key="currentFeature.title" class="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-sm shadow-2xl cursor-pointer hover-float" @click="openHigh(currentFeature.img, currentFeature.title)">
                   <img :src="currentFeature.img" :alt="currentFeature.title" class="w-full h-[360px] sm:h-[420px] lg:h-[480px] object-cover" />
                   <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 text-lg font-medium">
                     {{ currentFeature.title }}

@@ -14,7 +14,7 @@
           </button>
 
           <Transition name="item" mode="out-in">
-            <figure :key="currentFoto.title" class="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-sm shadow-2xl cursor-pointer" @click="openHigh(currentFoto.img, currentFoto.title)">
+            <figure :key="currentFoto.title" class="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-sm shadow-2xl cursor-pointer hover-float" @click="openHigh(currentFoto.img, currentFoto.title)">
               <img :src="currentFoto.img" :alt="currentFoto.title" class="w-full h-[360px] sm:h-[420px] lg:h-[520px] object-cover" />
               <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 text-lg font-medium">
                 {{ currentFoto.title }}

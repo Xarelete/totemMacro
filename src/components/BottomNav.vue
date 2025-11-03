@@ -1,11 +1,11 @@
 <template>
   <nav v-if="!isLanding" class="fixed bottom-0 inset-x-0 z-50">
     <div class="mx-auto w-full ">
-      <ul :class="['flex items-center justify-center gap-4 sm:gap-6 border-t backdrop-blur px-4 py-3 shadow-sm h-18', navBgClass]">
+      <ul :class="['flex items-center justify-center gap-4 sm:gap-6 border-t backdrop-blur px-4 py-4 shadow-sm h-20', navBgClass]">
         <li v-for="link in links" :key="link.to">
           <RouterLink
             :to="link.to"
-            class="px-2 sm:px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300"
+            class="px-3 sm:px-4 py-2 rounded-full text-base sm:text-lg font-semibold transition-colors duration-300"
             :class="isActive(link.to) ? 'bg-stone-900 text-white' : 'text-stone-700 hover:text-stone-900'"
           >
             {{ link.label }}
@@ -45,5 +45,9 @@ const links = computed(() => {
 
 const isActive = (path) => route.path === path
 
-const navBgClass = computed(() => (prefix.value === '/mirati' ? 'bg-[#FFA823]' : 'bg-[#C4A158]'))
+const navBgClass = computed(() => (
+  prefix.value === '/mirati'
+    ? 'bg-[#FFA823]'
+    : 'bg-[#C4A158]'
+))
 </script>

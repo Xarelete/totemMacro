@@ -11,7 +11,7 @@
       </Transition>
 
       <TransitionGroup name="item" appear tag="div" class="mt-6 grid sm:grid-cols-2 gap-6">
-        <figure v-for="(p, idx) in plantas" :key="p.title" class="rounded-2xl overflow-hidden border bg-white" :style="{ transitionDelay: `${idx * 90}ms` }">
+        <figure v-for="(p, idx) in plantas" :key="p.title" class="rounded-2xl overflow-hidden border bg-white hover-float" :style="{ transitionDelay: `${idx * 90}ms` }">
           <img :src="p.img" :alt="p.alt" class="w-full h-auto cursor-zoom-in" @click="openHigh(p.img, p.alt)" />
           <figcaption class="p-4 text-stone-900">
             <h3 class="font-semibold">{{ p.title }}</h3>
